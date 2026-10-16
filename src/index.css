@@ -2123,3 +2123,393 @@ body.dark-mode .hero-actions .glass-button.primary {
   visibility: visible;
   display: inline-flex;
 }
+
+
+/* =========================
+   RESPONSIVE IMPROVEMENTS
+========================= */
+
+/* Tablet */
+@media (max-width: 900px) {
+  .container {
+    width: calc(100% - 40px);
+  }
+
+  .hero-layout {
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 36px;
+    width: calc(100% - 48px);
+  }
+
+  .hero-profile {
+    width: min(30vw, 300px);
+    height: min(30vw, 300px);
+  }
+
+  .about-grid {
+    gap: 36px;
+  }
+
+  .experience-card {
+    gap: 28px;
+    padding: 30px;
+  }
+
+  .small-project-content {
+    padding: 26px;
+  }
+}
+
+/* Mobile dan tablet kecil */
+@media (max-width: 700px) {
+  .navbar-wrapper {
+    top: 12px;
+    padding-inline: 14px;
+  }
+
+  .navbar {
+    height: 56px;
+    padding: 0 10px 0 14px;
+  }
+
+  .navbar-logo {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+  }
+
+  .navbar-contact {
+    margin-left: auto;
+    margin-right: 10px;
+  }
+
+  .mobile-menu {
+    left: 14px;
+    right: 14px;
+  }
+
+  /* Hero */
+  .hero {
+    min-height: auto;
+    padding: 100px 0 50px;
+  }
+
+  .hero-layout {
+    width: calc(100% - 36px);
+    min-height: auto;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    transform: none;
+  }
+
+  .hero-profile {
+    width: clamp(160px, 48vw, 220px);
+    height: clamp(160px, 48vw, 220px);
+  }
+
+  .hero-content {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-eyebrow {
+    margin-bottom: 18px;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .hero h1 {
+    font-size: clamp(44px, 12vw, 68px);
+    line-height: 1;
+    letter-spacing: -0.06em;
+    overflow-wrap: anywhere;
+    margin-bottom: 22px;
+  }
+
+  .hero-description {
+    max-width: 540px;
+    font-size: 15px;
+    line-height: 1.7;
+    margin: 0 auto 26px;
+  }
+
+  .hero-actions {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .hero-actions .glass-button {
+    padding: 12px 17px;
+    font-size: 13px;
+  }
+
+  /* Section spacing */
+  .about-section,
+  .experience-section {
+    padding: 75px 0;
+  }
+
+  .about-header {
+    margin-bottom: 35px;
+  }
+
+  .about-header h2,
+  .experience-header h2 {
+    font-size: clamp(34px, 8vw, 52px);
+    line-height: 1.08;
+    overflow-wrap: anywhere;
+  }
+
+  .about-text p {
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .tech-card {
+    padding: 22px;
+    border-radius: 24px;
+  }
+
+  /* Experience */
+  .experience-header {
+    margin-bottom: 35px;
+  }
+
+  .experience-card {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 22px;
+    border-radius: 26px;
+  }
+
+  .experience-period img {
+    width: min(180px, 100%);
+    height: auto;
+    aspect-ratio: 3 / 4;
+  }
+
+  .experience-main h3 {
+    font-size: clamp(25px, 6vw, 34px);
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+  }
+
+  .experience-description {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .subjects {
+    gap: 7px;
+  }
+
+  .subjects span {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  /* Projects */
+  .projects-section {
+    width: calc(100% - 32px);
+    padding: 60px 0 75px;
+  }
+
+  .section-heading h2 {
+    font-size: clamp(36px, 9vw, 56px);
+    line-height: 1.04;
+    overflow-wrap: anywhere;
+  }
+
+  .featured-project,
+  .small-project-card {
+    border-radius: 23px;
+  }
+
+  .featured-content {
+    padding: 22px;
+  }
+
+  .small-project-content {
+    padding: 22px;
+    gap: 16px;
+  }
+
+  .featured-content h3,
+  .small-project-content h3 {
+    font-size: clamp(21px, 5.5vw, 28px);
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+  }
+
+  .project-description {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .project-tags {
+    gap: 7px;
+  }
+
+  .project-tags span {
+    font-size: 11px;
+    padding: 6px 9px;
+  }
+
+  /* Slideshow cards fit the viewport */
+  .projects-slideshow {
+    gap: 14px;
+  }
+
+  .projects-slideshow .small-project-card {
+    flex-basis: calc(100vw - 48px);
+    width: calc(100vw - 48px);
+    max-width: 520px;
+  }
+
+  .projects-view-toggle {
+    margin-bottom: 30px;
+  }
+
+  .slideshow-pagination {
+    gap: 9px;
+    max-width: calc(100vw - 24px);
+    padding: 5px 7px;
+  }
+
+  .pagination-arrow {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+  }
+
+  .pagination-dots {
+    gap: 6px;
+  }
+
+  .pagination-dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .pagination-dot.active {
+    width: 14px;
+  }
+
+  .pagination-counter {
+    min-width: auto;
+    font-size: 11px;
+  }
+
+  /* Contact */
+  .contact-section {
+    padding: 75px 0 20px;
+  }
+
+  .contact-card {
+    padding: 44px 22px;
+    border-radius: 26px;
+  }
+
+  .contact-card h2 {
+    font-size: clamp(34px, 8.5vw, 52px);
+    line-height: 1.05;
+    overflow-wrap: anywhere;
+  }
+
+  .contact-description {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .contact-links {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .contact-link {
+    width: 100%;
+    min-width: 0;
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .contact-link strong {
+    overflow-wrap: anywhere;
+    font-size: 13px;
+  }
+
+  .contact-link div:nth-child(2) span {
+    overflow-wrap: anywhere;
+    font-size: 11px;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 14px;
+    padding: 32px 0 24px;
+    text-align: center;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 380px) {
+  .hero-layout {
+    width: calc(100% - 28px);
+  }
+
+  .hero h1 {
+    font-size: 43px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-actions .glass-button {
+    width: 100%;
+  }
+
+  .featured-content,
+  .small-project-content {
+    padding: 18px;
+  }
+
+  .experience-card {
+    padding: 18px;
+  }
+
+  .contact-card {
+    padding: 36px 16px;
+  }
+
+  .slideshow-pagination {
+    gap: 6px;
+  }
+
+  .pagination-dots {
+    gap: 4px;
+  }
+}
+
+/* Reduce animation for users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
