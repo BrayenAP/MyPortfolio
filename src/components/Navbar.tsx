@@ -22,6 +22,7 @@ function Navbar() {
         </div>
 
         <button
+          type="button"
           className="theme-toggle"
           onClick={() => {
             document.body.classList.toggle('dark-mode');
@@ -32,6 +33,7 @@ function Navbar() {
         </button>
 
         <button
+          type="button"
           className={`mobile-menu-button ${
             menuOpen ? 'active' : ''
           }`}
@@ -39,6 +41,9 @@ function Navbar() {
           aria-label="Toggle navigation menu"
           aria-expanded={menuOpen}
         >
+          <span />
+          <span />
+        </button>
           <span />
           <span />
         </button>
