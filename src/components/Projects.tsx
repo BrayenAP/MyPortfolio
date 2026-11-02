@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useLayoutEffect } from 'react';
 
 const projects = [
   {
@@ -258,8 +258,80 @@ function Projects() {
     (project) => !project.featured
   );
 
+  const sectionRef = useRef<HTMLElement>(null);
+  const previousSectionTop = useRef<number | null>(null);
+  const slideshowWrapperRef = useRef<HTMLDivElement>(null);
+  const slideshowTrackRef = useRef<HTMLDivElement>(null);
+  
+  const [slideOffset, setSlideOffset] = useState(0);
+  
+  // Menghitung posisi carousel berdasarkan ukuran layar
+  useLayoutEffect(() => {
+    const updateSlidePosition = () => {
+      const wrapper = slideshowWrapperRef.current;
+      const track = slideshowTrackRef.current;
+  
+      if (!wrapper || !track) return;
+  
+      const firstCard = track.firstElementChild as HTMLElement | null;
+  
+      if (!firstCard) return;
+  
+      const gap = parseFloat(
+        window.getComputedStyle(track).gap
+      ) || 0;
+  
+      const cardWidth = firstCard.getBoundingClientRect().width;
+  
+      setSlideOffset(
+        wrapper.clientWidth / 2 -
+        cardWidth / 2 -
+        slideIndex * (cardWidth + gap)
+      );
+    };
+  
+    updateSlidePosition();
+  
+    window.addEventListener('resize', updateSlidePosition);
+  
+    return () => {
+      window.removeEventListener('resize', updateSlidePosition);
+    };
+  }, [slideIndex, viewMode]);
+  
+  // Menjaga posisi scroll ketika berganti tampilan
+  useLayoutEffect(() => {
+    const previousTop = previousSectionTop.current;
+    const section = sectionRef.current;
+  
+    if (previousTop === null || !section) return;
+  
+    const currentTop = section.getBoundingClientRect().top;
+  
+    window.scrollTo({
+      top: window.scrollY + currentTop - previousTop,
+      behavior: 'auto',
+    });
+  
+    previousSectionTop.current = null;
+  }, [viewMode]);
+  
+  // Mengganti tampilan tanpa mengubah posisi halaman
+  const changeView = (view: 'grid' | 'slideshow') => {
+    if (view === viewMode) return;
+  
+    previousSectionTop.current =
+      sectionRef.current?.getBoundingClientRect().top ?? null;
+  
+    setViewMode(view);
+  };
+
   return (
-    <section id="projects" className="projects-section">
+    <section
+      id="projects"
+      className="projects-section"
+      ref={sectionRef}
+    >
       <div className="section-heading">
         <p className="section-eyebrow">SELECTED WORK</p>
 
@@ -279,19 +351,20 @@ function Projects() {
       />
 
       <button
+        type="button"
         className={viewMode === 'slideshow' ? 'active' : ''}
-        onClick={() => setViewMode('slideshow')}
+        onClick={() => changeView('slideshow')}
       >
         Slideshow
       </button>
 
       <button
+        type="button"
         className={viewMode === 'grid' ? 'active' : ''}
-        onClick={() => setViewMode('grid')}
+        onClick={() => changeView('grid')}
       >
         Grid
       </button>
-    </div>
 
 
       {viewMode === 'grid' ? (
@@ -358,16 +431,18 @@ function Projects() {
         </div>
       </>
       ) : (
-        <div className="projects-slideshow-wrapper">
+        <div
+          className="projects-slideshow-wrapper"
+          ref={slideshowWrapperRef}
+        >
 
           <div
+            ref={slideshowTrackRef}
             className={`projects-slideshow ${
               isDragging ? 'dragging' : ''
             }`}
             style={{
-              transform: `translateX(calc(
-                50vw - 260px - ${slideIndex * 548}px + ${dragOffset}px
-              ))`,
+              transform: `translateX(${slideOffset + dragOffset}px)`,
             }}
             onPointerDown={(e) => {
               setIsDragging(true);
