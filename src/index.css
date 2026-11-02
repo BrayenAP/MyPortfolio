@@ -2757,3 +2757,16 @@ body.dark-mode .hero-actions .glass-button.primary {
     border-radius: 16px;
   }
 }
+
+@media (max-width: 700px) {
+  .contact-link {
+    position: relative;
+  }
+
+  .contact-link > div {
+    flex: 1;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+  }
+}
