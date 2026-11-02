@@ -28,6 +28,7 @@ function Experience() {
         <div className="experience-card glass">
           <div className="experience-period">
             <img
+              className="experience-image"
               src="/experience/teaching-assistant.jpg"
               alt="Software Laboratory Teaching Assistant"
             />
