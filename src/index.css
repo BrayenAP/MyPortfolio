@@ -3120,3 +3120,10 @@ body.dark-mode .hero-actions .glass-button.primary {
     flex-shrink: 0;
   }
 }
+
+/* Experience mobile positioning */
+@media (max-width: 700px) {
+  .experience-section .container {
+    transform: translateY(-20px);
+  }
+}
