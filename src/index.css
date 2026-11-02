@@ -2900,3 +2900,60 @@ body.dark-mode .hero-actions .glass-button.primary {
     background: #ffffff;
   }
 }
+
+/* =========================
+   NAVBAR BUTTON - LIGHT MODE
+========================= */
+
+@media (max-width: 700px) {
+  body:not(.dark-mode) .theme-toggle,
+  body:not(.dark-mode) .mobile-menu-button {
+    background: rgba(70, 80, 100, 0.09);
+    border: 1px solid rgba(70, 80, 100, 0.13);
+
+    color: #292d36;
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  body:not(.dark-mode) .theme-toggle:hover,
+  body:not(.dark-mode) .mobile-menu-button:hover {
+    background: rgba(70, 80, 100, 0.16);
+  }
+
+  body:not(.dark-mode) .theme-icon {
+    filter: none;
+  }
+
+  body:not(.dark-mode) .mobile-menu-button span {
+    background: #292d36;
+  }
+}
+
+/* =========================
+   NAVBAR BUTTON - DARK MODE
+========================= */
+
+@media (max-width: 700px) {
+  body.dark-mode .theme-toggle,
+  body.dark-mode .mobile-menu-button {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    color: #ffffff;
+  }
+
+  body.dark-mode .theme-toggle:hover,
+  body.dark-mode .mobile-menu-button:hover {
+    background: rgba(255, 255, 255, 0.22);
+  }
+
+  body.dark-mode .theme-icon {
+    filter: brightness(0) invert(1);
+  }
+
+  body.dark-mode .mobile-menu-button span {
+    background: #ffffff;
+  }
+}
