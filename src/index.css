@@ -2759,30 +2759,41 @@ body.dark-mode .hero-actions .glass-button.primary {
 }
 
 @media (max-width: 700px) {
-  .contact-links {
-    width: 100%;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
   .contact-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     width: 100%;
     box-sizing: border-box;
-    padding: 10px 38px;
-    position: relative;
-    justify-content: center;
+
+    padding: 10px 8px;
+    min-height: 58px;
   }
 
+  /* Ikon mepet ke kiri */
   .contact-link > :first-child {
+    position: absolute;
     left: 8px;
     width: 30px;
     height: 30px;
+    flex: none;
   }
 
+  /* Tulisan tetap tepat di tengah */
   .contact-link > div {
     width: 100%;
-    margin: 0;
+    display: flex;
     align-items: center;
+    justify-content: center;
     text-align: center;
+    margin: 0;
+  }
+
+  /* Panah mepet ke kanan */
+  .contact-link > :last-child {
+    position: absolute;
+    right: 8px;
   }
 }
