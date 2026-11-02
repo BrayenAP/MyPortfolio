@@ -270,26 +270,24 @@ function Projects() {
     const updateSlidePosition = () => {
       const wrapper = slideshowWrapperRef.current;
       const track = slideshowTrackRef.current;
-  
+    
       if (!wrapper || !track) return;
-  
-      const firstCard = track.firstElementChild as HTMLElement | null;
-  
-      if (!firstCard) return;
-  
-      const gap = parseFloat(
-        window.getComputedStyle(track).gap
-      ) || 0;
-  
-      const cardWidth = firstCard.getBoundingClientRect().width;
-  
-      setSlideOffset(
-        wrapper.clientWidth / 2 -
-        cardWidth / 2 -
-        slideIndex * (cardWidth + gap)
-      );
+    
+      const activeCard = track.children[
+        slideIndex
+      ] as HTMLElement | undefined;
+    
+      if (!activeCard) return;
+    
+      const cardCenter =
+        activeCard.offsetLeft +
+        activeCard.offsetWidth / 2;
+    
+      const wrapperCenter = wrapper.clientWidth / 2;
+    
+      setSlideOffset(wrapperCenter - cardCenter);
     };
-  
+      
     updateSlidePosition();
   
     window.addEventListener('resize', updateSlidePosition);
