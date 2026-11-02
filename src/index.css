@@ -3082,3 +3082,35 @@ body.dark-mode .hero-actions .glass-button.primary {
   }
 }
 
+/* =========================
+   MOBILE CONTACT CENTER
+========================= */
+
+@media (max-width: 700px) {
+  .contact-section {
+    min-height: 100svh;
+    height: 100svh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+    padding: 75px 16px 20px;
+
+    margin: 0;
+  }
+
+  .contact-section .container {
+    width: 100%;
+    max-width: 100%;
+    margin: auto;
+    padding: 0;
+  }
+
+  .contact-card {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
