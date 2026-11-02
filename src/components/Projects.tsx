@@ -342,30 +342,30 @@ function Projects() {
       </div>
 
       <div className="projects-view-toggle">
-      <div
-        className={`view-toggle-indicator ${
-          viewMode === 'slideshow'
-            ? 'slideshow-active'
-            : 'grid-active'
-        }`}
-      />
-
-      <button
-        type="button"
-        className={viewMode === 'slideshow' ? 'active' : ''}
-        onClick={() => changeView('slideshow')}
-      >
-        Slideshow
-      </button>
-
-      <button
-        type="button"
-        className={viewMode === 'grid' ? 'active' : ''}
-        onClick={() => changeView('grid')}
-      >
-        Grid
-      </button>
-
+        <div
+          className={`view-toggle-indicator ${
+            viewMode === 'slideshow'
+              ? 'slideshow-active'
+              : 'grid-active'
+          }`}
+        />
+  
+        <button
+          type="button"
+          className={viewMode === 'slideshow' ? 'active' : ''}
+          onClick={() => changeView('slideshow')}
+        >
+          Slideshow
+        </button>
+  
+        <button
+          type="button"
+          className={viewMode === 'grid' ? 'active' : ''}
+          onClick={() => changeView('grid')}
+        >
+          Grid
+        </button>
+      </div>
 
       {viewMode === 'grid' ? (
       <>
