@@ -3124,6 +3124,6 @@ body.dark-mode .hero-actions .glass-button.primary {
 /* Experience mobile positioning */
 @media (max-width: 700px) {
   .experience-section .container {
-    transform: translateY(-20px);
+    transform: translateY(-50px);
   }
 }
