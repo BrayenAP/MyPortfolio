@@ -2627,3 +2627,108 @@ body.dark-mode .hero-actions .glass-button.primary {
     transform: translateX(95px);
   }
 }
+
+/* =========================
+   EXPERIENCE IMAGE IMPROVEMENT
+========================= */
+
+.experience-card {
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 40px;
+  align-items: center;
+}
+
+.experience-period {
+  width: 100%;
+}
+
+.experience-image {
+  width: 100%;
+  max-width: 280px;
+  height: 360px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
+  display: block;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .experience-card {
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: 25px;
+  }
+
+  .experience-image {
+    max-width: 240px;
+    height: 320px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .experience-card {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 22px;
+  }
+
+  .experience-period {
+    align-items: center;
+  }
+
+  .experience-image {
+    width: min(100%, 300px);
+    max-width: 300px;
+    height: auto;
+    aspect-ratio: 3 / 4;
+  }
+
+  .experience-main {
+    width: 100%;
+  }
+}
+
+/* =========================
+   NAVBAR RESPONSIVE FIX
+========================= */
+
+.navbar-wrapper {
+  position: fixed;
+  top: 18px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.navbar {
+  pointer-events: auto;
+}
+
+.mobile-menu {
+  pointer-events: auto;
+  z-index: 10000;
+}
+
+/* Tablet and Mobile */
+@media (max-width: 700px) {
+  .navbar-wrapper {
+    top: 12px;
+    padding-inline: 14px;
+  }
+
+  .navbar {
+    width: 100%;
+    height: 56px;
+  }
+
+  .mobile-menu {
+    position: absolute;
+    top: 68px;
+    left: 14px;
+    right: 14px;
+  }
+}
