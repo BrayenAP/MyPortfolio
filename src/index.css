@@ -2864,3 +2864,39 @@ body.dark-mode .hero-actions .glass-button.primary {
     flex-shrink: 0;
   }
 }
+
+@media (max-width: 700px) {
+  .theme-toggle,
+  .mobile-menu-button {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    color: #ffffff;
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    transition: background 0.25s ease;
+  }
+
+  .theme-toggle:hover,
+  .mobile-menu-button:hover {
+    background: rgba(255, 255, 255, 0.22);
+  }
+
+  .theme-icon {
+    filter: brightness(0) invert(1);
+  }
+
+  .mobile-menu-button span {
+    background: #ffffff;
+  }
+}
