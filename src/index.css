@@ -3085,26 +3085,27 @@ body.dark-mode .hero-actions .glass-button.primary {
 /* =========================
    MOBILE CONTACT CENTER
 ========================= */
-
 @media (max-width: 700px) {
   .contact-section {
     min-height: 100svh;
     height: 100svh;
+    box-sizing: border-box;
+    padding: 65px 16px 24px;
 
     display: flex;
-    align-items: center;
-    justify-content: center;
-
-    box-sizing: border-box;
-    padding: 75px 16px 20px;
-
-    margin: 0;
+    flex-direction: column;
   }
 
   .contact-section .container {
     width: 100%;
     max-width: 100%;
-    margin: auto;
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    margin: 0 auto;
     padding: 0;
   }
 
@@ -3112,5 +3113,10 @@ body.dark-mode .hero-actions .glass-button.primary {
     width: 100%;
     margin: 0 auto;
   }
-}
 
+  .contact-footer {
+    margin-top: 16px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+}
