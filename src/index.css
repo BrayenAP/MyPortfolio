@@ -3013,3 +3013,71 @@ body.dark-mode .hero-actions .glass-button.primary {
     background: #292d36 !important;
   }
 }
+
+/* =========================
+   MOBILE HERO CENTER
+========================= */
+
+@media (max-width: 700px) {
+  .hero {
+    min-height: 100svh;
+    height: 100svh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+    padding: 70px 20px 20px;
+  }
+
+  .hero-layout {
+    width: 100%;
+    min-height: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 20px;
+    margin: 0 auto;
+    padding: 0;
+
+    transform: none;
+  }
+
+  .hero-profile {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+  }
+
+  .hero-content {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: clamp(38px, 9vw, 46px);
+    line-height: 1.1;
+    margin-bottom: 14px;
+  }
+
+  .hero-description {
+    max-width: 340px;
+    margin: 0 auto 20px;
+    line-height: 1.65;
+  }
+
+  .hero-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* About tidak terlihat di layar pertama */
+  .about-section {
+    margin-top: 0;
+  }
+}
