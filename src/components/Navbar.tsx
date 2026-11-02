@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 
 function Navbar() {
@@ -7,13 +8,24 @@ function Navbar() {
     setMenuOpen(false);
   };
 
+  const toggleDarkMode = () => {
+    document.body.classList.toggle('dark-mode');
+  };
+
   return (
     <header className="navbar-wrapper">
       <nav className="navbar">
-        <a href="#" className="navbar-logo" onClick={closeMenu}>
+
+        {/* Logo */}
+        <a
+          href="#"
+          className="navbar-logo"
+          onClick={closeMenu}
+        >
           B.
         </a>
 
+        {/* Desktop Navigation */}
         <div className="navbar-links">
           <a href="#about">About</a>
           <a href="#projects">Projects</a>
@@ -21,17 +33,17 @@ function Navbar() {
           <a href="#contact">Contact</a>
         </div>
 
+        {/* Dark Mode */}
         <button
           type="button"
           className="theme-toggle"
-          onClick={() => {
-            document.body.classList.toggle('dark-mode');
-          }}
+          onClick={toggleDarkMode}
           aria-label="Toggle dark mode"
         >
           <span className="theme-icon" />
         </button>
 
+        {/* Mobile Menu Button */}
         <button
           type="button"
           className={`mobile-menu-button ${
@@ -44,13 +56,13 @@ function Navbar() {
           <span />
           <span />
         </button>
-          <span />
-          <span />
-        </button>
+
       </nav>
 
+      {/* Mobile Navigation */}
       {menuOpen && (
         <div className="mobile-menu glass">
+
           <a href="#about" onClick={closeMenu}>
             About
           </a>
@@ -66,8 +78,10 @@ function Navbar() {
           <a href="#contact" onClick={closeMenu}>
             Contact
           </a>
+
         </div>
       )}
+
     </header>
   );
 }
