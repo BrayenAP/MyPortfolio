@@ -2764,34 +2764,46 @@ body.dark-mode .hero-actions .glass-button.primary {
     display: flex;
     align-items: center;
     justify-content: center;
-
     width: 100%;
-    box-sizing: border-box;
-
-    padding: 10px 8px;
     min-height: 58px;
+    padding: 8px;
+    box-sizing: border-box;
   }
 
-  /* Ikon mepet ke kiri */
+  /* Icon kiri */
   .contact-link > :first-child {
     position: absolute;
     left: 8px;
     width: 30px;
     height: 30px;
-    flex: none;
   }
 
-  /* Tulisan tetap tepat di tengah */
+  /* Konten tulisan */
   .contact-link > div {
-    width: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 3px;
+    width: 100%;
     text-align: center;
-    margin: 0;
   }
 
-  /* Panah mepet ke kanan */
+  .contact-link > div strong,
+  .contact-link > div b {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+  }
+
+  .contact-link > div p,
+  .contact-link > div span {
+    display: block;
+    font-size: 9px;
+    font-weight: 400;
+  }
+
+  /* Panah kanan */
   .contact-link > :last-child {
     position: absolute;
     right: 8px;
